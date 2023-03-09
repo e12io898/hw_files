@@ -8,9 +8,9 @@ for i in range(3):
 sort_buffer = sorted((buffer.items()), key=lambda x: len(x[1]))
 
 with open('sorted.txt', 'a', encoding='utf-8') as text:
-    for key, i in sort_buffer:
-        text.write(f'{key}\n')
-        text.write(f'{str(len(i))}\n')
-        for _ in i:
-            text.write(_)
-        text.write(f'\n')
+    for f_name, f_text in sort_buffer:
+        text.write(f'{f_name}\n')
+        text.write(f'{str(len(f_text))}\n')
+        for line in f_text:
+            text.write(line)
+        text.write('\n')
